@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Sensor Form</title>
+    <h3>Find Sensor Form</h3>
+</head>
+<body>
+    <form action="#" th:action="@{/rest/sensors/serial/} + ${serialNumber}" th:object="${tempSensor}" method="GET">
+        Serial Number: <input type="text" th:field="*{serialNumber}" th:value="*{serialNumber}"/>
+
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
