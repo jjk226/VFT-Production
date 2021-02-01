@@ -28,5 +28,36 @@
 
             </form>
         </div>
+        <br>
+        <div class="container">
+            <table class="table table-sm table-bordered table-condensed text-small">
+                <thead class="thead-dark">
+                <tr>
+                    <th>operation</th>
+                    <th>status</th>
+                    <th>comment</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task: ${tasks}">
+                    <td th:text="${task.operation}"/>
+                    <td th:text="${task.status}"/>
+                    <td th:text="${task.comment}"/>
+
+<!--                    <td>-->
+<!--                        <a th:href="@{/sensors/update(id=${sensor.id})}"-->
+<!--                           class="btn btn-primary btn-sm">-->
+<!--                            Update-->
+<!--                        </a>-->
+<!--                        <a th:href="@{/sensors/delete(id=${sensor.id})}"-->
+<!--                           class="btn btn-primary btn-sm">-->
+<!--                            Delete-->
+<!--                        </a>-->
+<!--                    </td>-->
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>

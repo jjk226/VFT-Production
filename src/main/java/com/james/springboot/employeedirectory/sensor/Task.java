@@ -62,4 +62,13 @@ public class Task {
         this.comment = comment;
     }
 
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", operation='" + operation + '\'' +
+                ", status='" + status + '\'' +
+                ", comment='" + comment + '\'' +
+                '}';
+    }
 }

@@ -38,9 +38,11 @@ public class DbInit implements CommandLineRunner {
         this.userRepository.saveAll(users);
 
         Sensor sensor = sensorService.findById(1195);
-        Task task = new Task("final leak check" , "completed", "Leak detected" );
-        sensor.addTask(task);
-        sensorService.save(sensor);
+        List<Task> tasks = sensor.getTasks();
+
+        for (Task task: tasks) {
+            System.out.println(task.toString());
+        }
     }
 
     public String encode(String string) {

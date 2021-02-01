@@ -55,4 +55,11 @@ public class SensorServiceImpl implements SensorService {
         this.sensorRepository.deleteById(id);
     }
 
+//    @Override
+//    public List<Task> getSensorTasksById(int id) {
+//        Sensor sensor = this.findById(id);
+//
+//        return sensor.getTasks();
+//    }
+
 }

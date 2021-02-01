@@ -45,8 +45,8 @@ public class Sensor {
 
     public Sensor() {}
 
-    public Sensor(int id, int serialNumber, String sensorType, int sensorFlow, String partNumber) {
-        this.id = id;
+    public Sensor(int productionOrder, int serialNumber, String sensorType, int sensorFlow, String partNumber) {
+        this.productionOrder = productionOrder;
         this.serialNumber = serialNumber;
         this.sensorType = sensorType;
         this.sensorFlow = sensorFlow;

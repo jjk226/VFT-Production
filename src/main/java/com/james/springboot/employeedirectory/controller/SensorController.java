@@ -3,6 +3,7 @@ package com.james.springboot.employeedirectory.controller;
 import com.james.springboot.employeedirectory.sensor.Sensor;
 import com.james.springboot.employeedirectory.sensor.SensorService;
 import com.james.springboot.employeedirectory.sensor.SensorType;
+import com.james.springboot.employeedirectory.sensor.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,8 +38,12 @@ public class SensorController {
     @GetMapping("/update")
     public String update(@RequestParam("id") int id, Model model) {
         System.out.println(">> sensor id to update: " + id);
+
         Sensor tempSensor = this.sensorService.findById(id);
+        List<Task> tempTasks = tempSensor.getTasks();
+
         model.addAttribute("tempSensor", tempSensor);
+        model.addAttribute("tasks", tempTasks);
 
         return "sensor/update-sensor-form";
     }

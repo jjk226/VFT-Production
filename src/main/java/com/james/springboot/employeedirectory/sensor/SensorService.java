@@ -20,6 +20,8 @@ public interface SensorService {
 
     public void deleteById(int id);
 
+//    public List<Task> getSensorTasksById(int id);
+
 
 
 
