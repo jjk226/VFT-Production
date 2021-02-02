@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 @Service
 public class DbInit implements CommandLineRunner {
@@ -36,13 +37,7 @@ public class DbInit implements CommandLineRunner {
             System.out.println("User: " + u.getUsername() + ", permissions: " + u.getPermissions());
         }
         this.userRepository.saveAll(users);
-
-        Sensor sensor = sensorService.findById(1195);
-        List<Task> tasks = sensor.getTasks();
-
-        for (Task task: tasks) {
-            System.out.println(task.toString());
-        }
+        
     }
 
     public String encode(String string) {

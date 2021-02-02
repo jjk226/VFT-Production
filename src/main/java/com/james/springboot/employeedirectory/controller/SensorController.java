@@ -51,6 +51,10 @@ public class SensorController {
     @PostMapping("/save")
     public String save(@ModelAttribute("tempSensor") @Valid Sensor sensor, Error error, Model model) {
         int tempSerialNumber = sensor.getSerialNumber();
+
+        List<Task> tasks = sensorService.findById(sensor.getId()).getTasks();
+        sensor.setTasks(tasks);
+
         if (this.sensorService.existsBySerialNumber(tempSerialNumber)) {
             System.out.println(">> WARNING! DUPLICATE PART NUMBER");
             //return "error";
