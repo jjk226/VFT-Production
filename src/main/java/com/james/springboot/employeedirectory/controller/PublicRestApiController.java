@@ -21,7 +21,6 @@ public class PublicRestApiController {
     }
 
     @GetMapping("/users/{username}")
-    @ResponseBody
     public User findByUsername(@PathVariable("username") String username) {
         return userRepository.findByUsername(username);
     }
