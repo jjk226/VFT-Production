@@ -17,6 +17,10 @@ public class SensorServiceImpl implements SensorService {
     public SensorServiceImpl(SensorRepository sensorRepository) {
         this.sensorRepository = sensorRepository;
     }
+
+//    public SensorServiceImpl() {
+//
+//    }
     @Override
     public List<Sensor> findAll() {
         return sensorRepository.findAll();
