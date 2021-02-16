@@ -33,7 +33,7 @@ public class DbInit implements CommandLineRunner {
             System.out.println("User: " + u.getUsername() + ", permissions: " + u.getPermissions());
         }
         this.userRepository.saveAll(users);
-        
+
     }
 
     public String encode(String string) {

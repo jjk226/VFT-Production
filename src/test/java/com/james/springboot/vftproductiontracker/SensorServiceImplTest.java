@@ -41,8 +41,8 @@ public class SensorServiceImplTest {
     @Before
     public void setUp() {
         Sensor sensor = new Sensor(12345678, 123456, "VLP", 3, "PZN-SS-XX-XXX");
-
         Mockito.when(sensorRepository.findBySerialNumber(sensor.getSerialNumber())).thenReturn(sensor);
+        Mockito.when(sensorRepository.existsBySerialNumber(sensor.getSerialNumber())).thenReturn(true);
     }
 
     @Test
@@ -51,6 +51,14 @@ public class SensorServiceImplTest {
         Sensor sensor = sensorService.findBySerialNumber(serialNumber);
 
         assertThat(sensor.getSerialNumber()).isEqualTo(serialNumber);
+    }
+
+    @Test
+    public void whenExistsBySerialNumberReturnTrue() {
+        int serialNumber = 123456;
+        boolean sensorExists = sensorService.existsBySerialNumber(serialNumber);
+
+        assertThat(sensorService.existsBySerialNumber(serialNumber)).isEqualTo(true);
     }
 
 
